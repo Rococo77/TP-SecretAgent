@@ -10,8 +10,13 @@ namespace Rossetto.RG.Dal.DAL
 {
     public class RossettoDbContext : DbContext, IRossettoDbContext
     {
-        public DbSet<Espions> Espions { get; set; }
-        public DbSet<Missions> Missions { get; set; }
+        public DbSet<Espion> Espions { get; set; }
+        public DbSet<Mission> Missions { get; set; }
+
+        public List<Espion> GetAllEspions()
+        {
+            return Espions.ToList();
+        }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {

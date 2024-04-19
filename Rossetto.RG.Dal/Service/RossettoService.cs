@@ -19,7 +19,7 @@ namespace Rossetto.RG.Dal.Service
 
         public void AddEspion(string nom, string nomCode)
         {
-            var espion = new Espions { Nom = nom, NomCode = nomCode };
+            var espion = new Espion { Nom = nom, NomCode = nomCode };
             _rossettoDbContext.Espions.Add(espion);
             _rossettoDbContext.SaveChanges();
         }
@@ -40,7 +40,7 @@ namespace Rossetto.RG.Dal.Service
 
         public void AddMission(string lieu, int annee)
         {
-            var mission = new Missions { Lieu = lieu, Annee = annee };
+            var mission = new Mission { Lieu = lieu, Annee = annee };
             _rossettoDbContext.Missions.Add(mission);
             _rossettoDbContext.SaveChanges();
         }
@@ -81,7 +81,10 @@ namespace Rossetto.RG.Dal.Service
                 }
             }
         }
-
+        public List<Espion> GetEspionsByMission(string lieu)
+        {
+            return _rossettoDbContext.Espions.Where(e => e.Missions.Any(m => m.Lieu == lieu)).ToList();
+        }
 
 
 

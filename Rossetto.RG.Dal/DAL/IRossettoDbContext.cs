@@ -5,8 +5,12 @@ namespace Rossetto.RG.Dal.DAL
 {
     public interface IRossettoDbContext
     {
-        DbSet<Espions> Espions { get; set; }
-        DbSet<Missions> Missions { get; set; }
+        DbSet<Espion> Espions { get; set; }
+        DbSet<Mission> Missions { get; set; }
+
+        List<Espion> GetAllEspions();
+
+
         int SaveChanges();
     }
 }

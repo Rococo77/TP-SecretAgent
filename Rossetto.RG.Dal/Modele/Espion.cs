@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace Rossetto.RG.Dal.Modele
 {
-    public class Espions
+    public class Espion
     {
         public int Id { get; set; }
         [MaxLength(30)]
@@ -16,7 +16,7 @@ namespace Rossetto.RG.Dal.Modele
         [MaxLength(50)]
         public string NomCode { get; set; }
 
-        public List<Missions> Missions { get; set; }
+        public List<Mission> Missions { get; set; }
 
 
     }
