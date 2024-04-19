@@ -1,4 +1,4 @@
-﻿namespace TP_SecretEspion
+﻿namespace Rossetto.RG.Cli
 {
     internal class Program
     {
